@@ -1,0 +1,265 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: rgb(50, 50, 50);
+    position: relative;
+}
+
+img{
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    padding: .8rem;
+}
+
+.abo{
+    position: relative;
+    width: 150px;
+    height: 150px;
+    margin-bottom: 2rem;
+}
+
+.abo .spin{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(0);
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    border-top: .2rem solid transparent;
+    border-bottom: .2rem solid transparent;
+    border-left: .2rem solid green;
+    border-right: .2rem solid green;
+    animation: spinner 7s linear infinite;
+}
+
+@keyframes spinner {
+    100%{
+        transform: translate(-50%, -50%) rotate(360deg);
+    }
+}
+
+.aside{
+    width: 300px;
+    height: 100vh;
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    justify-content: center;
+    border-right: 2px solid rgb(0, 153, 8);
+    background-color: rgb(39, 39, 39);
+}
+
+.aside a{
+    margin-bottom: 4rem;
+    font-size: 16px;
+    text-decoration: none;
+    font-weight: 600;
+    color: rgb(0, 200, 0);
+    position: relative;
+    padding: .5rem;
+    border: 1px solid transparent;
+    z-index: 1;
+}
+
+.aside a::after{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    background-color: rgb(50, 50, 50);
+    z-index: -1;
+}
+
+
+.aside a:hover::after{
+    width: 100%;
+    transition: .5s;
+    border: 1px solid rgb(3, 130, 3);
+}
+
+.home{
+    position: absolute;
+    top: 28.3%;
+    left: 30%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 4rem;
+}
+
+.home-content{
+    padding: 1rem;
+}
+
+.home-content h1{
+    font-size: 56px;
+    color: whitesmoke;
+    margin-bottom: 1.3rem;
+}
+
+.chima{
+    color: rgb(0, 190, 0);
+}
+
+.home-content h3{
+    font-size: 30px;
+    color: white;
+}
+
+.web{
+    color: rgb(0, 190, 0);
+}
+
+.home-content p{
+    padding: 4% 0;
+    margin-bottom: 1rem;
+    font-size: 18px;
+    color: white;
+    width: 600px;
+    text-align: left;
+}
+
+.home-content a{
+    padding: .5rem;
+    font-weight: 600;
+    font-family: 'Times New Roman', Times, serif;
+    background-color: transparent;
+    border: 1px solid rgb(0, 201, 0);
+    text-decoration: none;
+    color: white;
+    font-size: 15px;
+    position: relative;
+    z-index: 1;
+}
+
+.home-content a::after{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    background-color: rgb(50, 50, 50);
+    color: black;
+    z-index: -1;
+}
+
+.home-content a:hover{
+    color: black;
+    transition: .5s;
+}
+
+.home-content a:hover::after{
+    width: 100%;
+    background-color: green;
+    transition: .5s;
+}
+
+.second{
+    margin-left: 1rem;
+}
+
+.aside2{
+    display: none;
+}
+
+.menu{
+    display: none;
+}
+
+
+@media screen and (max-width: 1000px) {
+    .abo{
+        margin: 0 auto;
+        display: flex;
+        justify-content: center;
+    }
+
+    .home-content h1{
+        font-size: 50px;
+    }
+
+    .aside{
+        display: none;
+    }
+
+    .aside2{
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        height: 100vh;
+        z-index: 999;
+        background-color: transparent;
+        backdrop-filter: blur(18px);
+        width: 100%;
+    }
+
+    .homee{
+        margin-top: 1rem;
+    }
+
+    ul a{
+        text-decoration: none;
+        display: flex;
+        flex-direction: column;
+        color: white;
+        font-size: 18px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 6rem;
+        padding: 1rem;
+    }
+
+    ul a:hover{
+        background-color: rgb(100, 125, 100);
+        padding: 1rem;
+        transition: .5s;
+    }
+
+    .menu{
+        color: white;
+        width: 36px;
+        height: 36px;
+        z-index: 100;
+        display: flex;
+        margin: 1rem;
+        cursor: pointer;
+    }
+
+    .close{
+        font-size: 18px;
+        color: white;
+        width: 36px;
+        height: 36px;
+        z-index: 100;
+        display: flex;
+        margin: 1rem;
+        cursor: pointer;
+    }
+
+
+    .home{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        position: absolute;
+        left: 0;
+        padding: 1rem;
+    }
+
+    .home-content p{
+        width: 100%;
+    }
+    
+}
